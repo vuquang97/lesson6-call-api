@@ -14,8 +14,8 @@ export class ActorSearchComponent implements OnInit {
 
   private seacrchName = new Subject<string>();
 
-  search(name: string): void {
-    this.seacrchName.next(name);
+  search(term: string): void {
+    this.seacrchName.next(term);
   }
 
   constructor(private actorService: ActorService) { }
@@ -24,7 +24,7 @@ export class ActorSearchComponent implements OnInit {
     this.actors$ = this.seacrchName.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((name: string) => this.actorService.seacchActor(name))
+      switchMap((term: string) => this.actorService.seacchActor(term))
     );
   }
 
