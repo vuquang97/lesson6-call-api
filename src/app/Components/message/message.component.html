@@ -1,0 +1,6 @@
+<div *ngIf="messageService.messages.length">
+    <div *ngFor="let mes of messages" [style.backgroundColor]="'orange'">
+        message works! : {{mes}}
+    </div>
+    <button (click)="messageService.deleteMessage()">delete message</button>
+</div>

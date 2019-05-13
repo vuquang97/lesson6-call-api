@@ -1,0 +1,46 @@
+<div>
+    <button (click)="isStatus = !isStatus">Add Actor</button>
+    <table *ngIf="isStatus">
+        <tr>
+            <td>Name</td>
+            <td><input #nameActor [placeholder]="'name'" /></td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td><input #roleActor [placeholder]="'role'" /></td>
+        </tr>
+        <tr>
+            <td>Movie</td>
+            <td><input #movieActor [placeholder]="'movie'" /></td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="addActor(nameActor.value, roleActor.value, movieActor.value); 
+                    nameActor.value = ''; roleActor.value= ''; movieActor.value= '';">
+                    ADD
+                </button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Movie</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let actor of actors">
+            <td>{{ actor.id }}</td>
+            <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.name }}</a></td>
+            <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.role }}</a></td>
+            <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.movie }}</a></td>
+            <td>
+                <button (click)="deleteActor(actor.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- <app-actor-detail [actor]="actorSelected" (myClick)="DelateActor($event)"></app-actor-detail> -->

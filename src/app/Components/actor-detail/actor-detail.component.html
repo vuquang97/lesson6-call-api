@@ -1,0 +1,28 @@
+<div [style.marginLeft]="'130px'">
+    <div *ngIf="actor">
+        <table *ngIf="actor">
+            <tr>
+                <td>id</td>
+                <td>{{ actor.id }}</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [value]="actor.name" [(ngModel)]="actor.name" /></td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td><input [value]="actor.role" [(ngModel)]="actor.role" /></td>
+            </tr>
+            <tr>
+                <td>Movie</td>
+                <td><input [value]="actor.movie" [(ngModel)]="actor.movie" /></td>
+            </tr>
+            <tr>
+                <td><button (click)="getUpdate(actor)">update</button></td>
+                <td><button>delete</button></td>
+            </tr>
+        </table>
+        <button (click)="goBack()">back</button>
+    </div>
+    <h2>{{userService.user.name}}</h2>
+</div>

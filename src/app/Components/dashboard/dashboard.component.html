@@ -1,0 +1,6 @@
+<div class="flex-container">
+    <a routerLink="/actorparent/detail/{{ actor.id }}"  *ngFor="let actor of actors"  class="actor-style" >
+        {{ actor.name }}
+    </a>
+</div>
+<app-actor-search></app-actor-search>
