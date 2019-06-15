@@ -52,7 +52,7 @@ export class ActorComponent implements OnInit {
     this.activatedRoute.queryParamMap.subscribe(
       query => {
         const oderby = query.get('orderby');
-        console.log(oderby);
+        console.log('?orderby = ' + oderby);
       }
     )
   }

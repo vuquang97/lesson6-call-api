@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Actor } from '../../actor';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ActorService } from '../../service/actor.service';
 import { UserService } from '../../service/user.service';
@@ -26,8 +26,14 @@ export class ActorDetailComponent implements OnInit {
     this.location.back();
   }
 
+  gotoHome(actor: Actor) {
+    let actorId = actor ? this.actor.id : null;
+    this.router.navigate(['/home', {id: actorId, foo: 'foo'}]);
+  }
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private actorService: ActorService,
     private location: Location,
     public userService: UserService

@@ -30,3 +30,4 @@ const dangkyRouting: Routes = [
     ]
 })
 export class DangkyRoutingModule { }
+export const RoutingComponent = [DangkyComponent, ForgotPasswordComponent];

@@ -2,7 +2,7 @@
     <h1>title</h1>
     <nav [style.marginBottom]="'30px'">
         <a routerLink="/" class="button">Home</a>
-        <a routerLink="/actorparent/actor" class="button">Actor</a>
+        <a [routerLink]="['/actorparent/actor']" class="button">Actor</a>
         <a routerLink="/actorparent/dashboard" class="button">Dashboard</a>
         <a routerLink="/account" class="button">Account</a>
     </nav>

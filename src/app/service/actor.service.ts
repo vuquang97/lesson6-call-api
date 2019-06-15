@@ -11,6 +11,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class ActorService {
     private actorURL = 'http://5cd283e5d935aa0014149e0f.mockapi.io/actors';
+    //private actorURL = 'http://localhost:3000/products';
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
@@ -68,9 +69,9 @@ export class ActorService {
             return of([])
         }
 
-        //const actorUrlName = `${this.actorURL}/?name=${name}`;
+        const actorUrlName = `${this.actorURL}?name_like=${term}`;
 
-        return this.http.get<Actor[]>(`${this.actorURL}/?name=${term}`).pipe(
+        return this.http.get<Actor[]>(actorUrlName).pipe(
             tap(_ => this.log(`actor with name: ${term}`),
             ),
             catchError(this.handleError<Actor[]>('searchActor', []))

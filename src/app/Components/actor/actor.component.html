@@ -33,7 +33,7 @@
         </tr>
         <tr *ngFor="let actor of actors">
             <td>{{ actor.id }}</td>
-            <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.name }}</a></td>
+            <td><a [routerLink]="['/actorparent/detail', actor.id]">{{ actor.name }}</a></td>
             <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.role }}</a></td>
             <td><a routerLink="/actorparent/detail/{{actor.id}}">{{ actor.movie }}</a></td>
             <td>
